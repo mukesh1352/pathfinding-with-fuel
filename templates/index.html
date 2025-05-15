@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A* Pathfinding</title>
+</head>
+<body>
+    <h1>A* Pathfinding Visualization</h1>
+    <form method="POST">
+        <label for="start">Start Node:</label>
+        <select name="start" id="start">
+            {% for node in nodes %}
+                <option value="{{ node }}">{{ node }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="end">End Node:</label>
+        <select name="end" id="end">
+            {% for node in nodes %}
+                <option value="{{ node }}">{{ node }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Find Path">
+    </form>
+
+    {% if img_data %}
+        <h2>Path Visualization:</h2>
+        <img src="data:image/png;base64,{{ img_data }}">
+        <p><strong>Path:</strong> {{ path }}</p>
+        <p><strong>Total Distance:</strong> {{ distance }} km</p>
+        <p><strong>Fuel Consumed:</strong> {{ fuel_consumed }} liters</p>
+    {% endif %}
+</body>
+</html>
