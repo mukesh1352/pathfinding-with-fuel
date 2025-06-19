@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import heapq
 import math
-from flask import Flask, render_template, request, Request
+from flask import Flask, render_template, request
 import io
 import base64
 
@@ -187,3 +187,7 @@ def index():
         distance=distance,
         fuel_consumed=fuel_consumed,
     )
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
