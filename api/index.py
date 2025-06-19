@@ -187,8 +187,3 @@ def index():
         distance=distance,
         fuel_consumed=fuel_consumed,
     )
-
-
-# For Vercel Python Serverless Function
-def handler(request: Request):
-    return app(request.environ, start_response=lambda *args: None)
